@@ -1,0 +1,15 @@
+<div class='sidebar navbar navbar-brand'>
+  Hi <%= current_user.email%>
+  <div class="" id="user-sidebar-options">
+    <i class="fa fa-user" aria-hidden="true"></i>
+    <%= link_to(destroy_user_session_path, :method => :delete) do %>
+    <i class="fa fa-sign-out" aria-hidden="true"></i>
+    <% end %>
+  </div>
+
+  <div class="" id="sidebar-menu">
+    <a href="#" class="sidebar-menu-item">Usuarios</a>
+    <a href="#" class="sidebar-menu-item">Clases</a>
+    <a href="#" class="sidebar-menu-item">Alumnos</a>
+  </div>
+</div>

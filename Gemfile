@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails', '~> 4.7'
+  gem 'ffaker', '~> 2.0'
 end
 
 group :development do
@@ -48,3 +51,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise', '~> 4.2.0'
+
+gem 'bootstrap', '~> 4.0.0.alpha4'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+
+gem "font-awesome-rails"
