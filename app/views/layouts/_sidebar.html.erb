@@ -1,5 +1,5 @@
 <div class='sidebar navbar navbar-brand'>
-  Hi <%= current_user.email%>
+   <b class="text-center"><%= current_user.name.capitalize %></b>
   <div class="" id="user-sidebar-options">
     <i class="fa fa-user" aria-hidden="true"></i>
     <%= link_to(destroy_user_session_path, :method => :delete) do %>
