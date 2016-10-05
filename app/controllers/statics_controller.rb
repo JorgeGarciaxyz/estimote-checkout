@@ -4,4 +4,7 @@ class StaticsController < ApplicationController
 
   end
 
+  def students_menu
+  end
+
 end
