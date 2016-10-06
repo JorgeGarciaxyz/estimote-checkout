@@ -2,4 +2,8 @@
   <td><strong><%= student.full_name %></strong></td>
   <td><%= student.student_number %></td>
   <td><%= student.uuid %></td>
+  <td>
+    <%= link_to "", edit_student_path(student.id), class: "fa fa-pencil-square-o"%>
+    <i class="fa fa-times destroy-student-icon"></i>
+  </td>
 </tr>
