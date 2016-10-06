@@ -3,6 +3,7 @@ class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   def index
+    @students = Student.all
   end
 
   def new
@@ -12,7 +13,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     if @student.save
-      redirect_to root_path
+      redirect_to students_path
     else
       render 'new'
     end
