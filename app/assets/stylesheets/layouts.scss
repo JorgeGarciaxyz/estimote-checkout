@@ -1,3 +1,7 @@
+.error_explanation{
+  color: red;
+}
+
 .sidebar {
    position: relative;
    height: 100vh;
@@ -9,8 +13,14 @@
    text-overflow: ellipsis;
 }
 
+.sidebar-menu-item{
+  margin: 10% 0%;
+}
+
+
 #application-yield-container{
   margin-left: 14%;
+  margin-right: 1%;
  }
 
 #user-sidebar-options{
@@ -24,8 +34,4 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.sidebar-menu-item{
-  margin: 10% 0%;
 }

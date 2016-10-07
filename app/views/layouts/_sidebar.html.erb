@@ -1,5 +1,5 @@
 <div class='sidebar navbar navbar-brand'>
-  Hi <%= current_user.email%>
+  Hi <%= current_user.name %>
   <div class="" id="user-sidebar-options">
     <i class="fa fa-user" aria-hidden="true"></i>
     <%= link_to(destroy_user_session_path, :method => :delete) do %>
@@ -10,6 +10,7 @@
   <div class="" id="sidebar-menu">
     <a href="#" class="sidebar-menu-item">Usuarios</a>
     <a href="#" class="sidebar-menu-item">Clases</a>
-    <a href="#" class="sidebar-menu-item">Alumnos</a>
+    <%= link_to "Alumnos", students_menu_path, class: "sidebar-menu-item"%>
+    <%= link_to "Home", root_path, class: "sidebar-menu-item"%>
   </div>
 </div>
