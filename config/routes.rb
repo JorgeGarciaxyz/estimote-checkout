@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   root 'statics#home'
 
   resources :users, only: [:index]
+  resources :students
+  get '/students_menu' => "statics#students_menu"
 end

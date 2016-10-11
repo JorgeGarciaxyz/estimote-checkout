@@ -1,0 +1,11 @@
+<tr id="<%= student.id %>">
+  <td><strong><%= student.full_name %></strong></td>
+  <td><%= student.student_number %></td>
+  <td><%= student.uuid %></td>
+  <td>
+    <%= link_to "", edit_student_path(student.id), class: "fa fa-pencil-square-o"%>
+    <%= link_to "", {action: 'destroy', id: student.id},
+          data: {confirm: "Seguro que desea eliminar al estudiante?"}, method: :delete,
+          class: "fa fa-times destroy-student-icon"%>
+  </td>
+</tr>
