@@ -26,9 +26,19 @@ class StudentsController < ApplicationController
   end
 
   def update
+    if @student.update_attributes(student_params)
+      redirect_to students_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    if @student.destroy
+      redirect_to students_path
+    else
+      redirect_to root_path
+    end
   end
 
   private
@@ -40,7 +50,5 @@ class StudentsController < ApplicationController
     def student_params
       params.require(:student).permit(:full_name, :uuid, :student_number)
     end
-
-
-
+    
 end
