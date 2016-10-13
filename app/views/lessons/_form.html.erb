@@ -9,18 +9,18 @@
 
   <div class="form-group">
     <%= f.label :hour %>
-    <%= f.text_field :hour, class: "form-control", required: true %>
+    <%= f.select :hour, HOURS, class: "form-control", include_blank: true %>
   </div>
 
   <div class="form-group">
     <%= f.label :classroom %>
-    <%= f.text_field :classroom, class: "form-control", required: true %>
+    <%= f.select :classroom, CLASSROOMS, class: "form-control", include_blank: true %>
   </div>
 
   <div class="form-group">
     <%= f.label :user_id %>
     <%= f.text_field :user_id, class: "form-control", required: true %>
   </div>
-  
+
   <button type="submit" class="btn btn-primary btn-block">Guardar</button>
 <% end %>
