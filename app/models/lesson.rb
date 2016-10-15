@@ -6,4 +6,5 @@ class Lesson < ApplicationRecord
   delegate :name, to: :user, allow_nil: true, prefix: true
   delegate :last_name, to: :user, allow_nil: true, prefix: true
   # Pending relationships
+  has_many :enrolled_students, dependent: :destroy
 end
