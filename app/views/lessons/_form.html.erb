@@ -24,7 +24,7 @@
 
   <div class="form-group">
     <h3>Alumnos</h3>
-    <%= render "enrolled_students" %>
+    <%= render partial: "lessons/enrolled_students", locals: {f: f} %>
   </div>
 
   <button type="submit" class="btn btn-primary btn-block">Guardar</button>

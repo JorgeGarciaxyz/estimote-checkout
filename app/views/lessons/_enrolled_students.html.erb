@@ -6,4 +6,12 @@
       <th>Agregar</th>
     </tr>
   </thead>
+  <tbody>
+    <%= f.fields_for :enrolled_students, @lesson.available_students do  |student| %>
+      <tr id="<%= student.object.id %>">
+        <th><%= student.object.full_name %></th>
+        <th><%= student.object.student_number %></th
+      </tr>
+    <% end %>
+  </tbody>
 </table>

@@ -1,4 +1,4 @@
-module Lesson::Users
+module Lesson::Students
   extend ActiveSupport::Concern
   included do
     def available_students
