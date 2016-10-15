@@ -2,9 +2,11 @@
   <td><strong><%= lesson.name %></strong></td>
   <td><%= lesson.hour %></td>
   <td><%= lesson.classroom %></td>
-  <td><%= lesson.user_id %></td>
+  <td><%= lesson.user_name %> <%= lesson.user_last_name %></td>
   <td>
     <%= link_to "", edit_lesson_path(lesson.id), class: "fa fa-pencil-square-o"%>
-    <i class="fa fa-times destroy-student-icon"></i>
+    <%= link_to "", {action: 'destroy', id: lesson.id},
+          data: {confirm: "Seguro que desea eliminar la clase?"}, method: :delete,
+          class: "fa fa-times destroy-student-icon"%>
   </td>
 </tr>

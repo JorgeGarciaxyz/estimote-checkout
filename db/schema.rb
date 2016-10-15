@@ -10,17 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161015200301) do
+ActiveRecord::Schema.define(version: 20161015214200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "assistances", force: :cascade do |t|
-    t.boolean  "is_present"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "enrolled_students", force: :cascade do |t|
     t.integer  "lesson_id"
     t.integer  "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_enrolled_students_on_lesson_id", using: :btree
+    t.index ["student_id"], name: "index_enrolled_students_on_student_id", using: :btree
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 20161015200301) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_lessons_on_user_id", using: :btree
   end
 
   create_table "students", force: :cascade do |t|
@@ -57,4 +59,7 @@ ActiveRecord::Schema.define(version: 20161015200301) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "enrolled_students", "lessons"
+  add_foreign_key "enrolled_students", "students"
+  add_foreign_key "lessons", "users"
 end
