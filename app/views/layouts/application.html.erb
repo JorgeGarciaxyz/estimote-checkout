@@ -12,6 +12,9 @@
     <%= render "layouts/sidebar" %>
     <div id="application-yield-container">
       <%= yield %>
+      <div id="flash">
+        <%= render 'layouts/flash' %>
+      </div>
     </div>
   </body>
 </html>

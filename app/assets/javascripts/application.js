@@ -16,4 +16,5 @@
 //= require tether
 //= require bootstrap
 //= require sweetalert2.min
+//= require toastr.min
 //= require users
