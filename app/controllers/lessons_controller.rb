@@ -25,9 +25,19 @@ class LessonsController < ApplicationController
   end
 
   def update
+    if @lesson.update_attributes(lesson_params)
+      redirect_to lessons_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    if @lesson.destroy
+      redirect_to lessons_path
+    else
+      redirect_to lessons_path
+    end
   end
 
   private
