@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005011043) do
+ActiveRecord::Schema.define(version: 20161015200301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assistances", force: :cascade do |t|
+    t.boolean  "is_present"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "lesson_id"
+    t.integer  "student_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.string   "name"
+    t.string   "hour"
+    t.string   "classroom"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "students", force: :cascade do |t|
     t.string   "full_name"
@@ -36,8 +53,6 @@ ActiveRecord::Schema.define(version: 20161005011043) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "name"
-    t.string   "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
