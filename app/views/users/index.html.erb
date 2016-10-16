@@ -4,5 +4,9 @@
     Usuarios
   </div>
 </div>
-  <%= render "indextable" %>
-  <%= link_to "Nuevo Usuario", new_user_path %>
+<%= render "indextable" %>
+
+<%= link_to new_user_path, class: "button-container" do%>
+  <i class="fa fa-plus"></i>
+  <div>Nuevo Usuario</div>
+<% end %>

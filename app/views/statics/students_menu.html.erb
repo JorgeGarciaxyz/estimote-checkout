@@ -9,6 +9,7 @@
   <%= link_to "Ver alumnos", students_path %>
 </p>
 
-<p>
-  <%= link_to "Agregar nuevo alumno", new_student_path %>
-</p>
+<%= link_to new_student_path, class: "button-container" do%>
+  <i class="fa fa-plus"></i>
+  <div>Agregar nuevo alumno</div>
+<% end %>

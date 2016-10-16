@@ -6,4 +6,8 @@
 </div>
 
 <%= render "indextable" %>
-<%= link_to "Volver", students_menu_path %>
+
+<%= link_to new_student_path, class: "button-container" do%>
+  <i class="fa fa-plus"></i>
+  <div>Agregar nuevo alumno</div>
+<% end %>
