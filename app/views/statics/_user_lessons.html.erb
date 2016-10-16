@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Hora</th>
+      <th>Salon</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @lessons.each do |lesson| %>
+    <tr>
+      <td><%= link_to lesson.name, lesson_path(lesson.id) %></td>
+      <td><%= lesson.hour %></td>
+      <td><%= lesson.classroom %></td>
+      <td>
+        <%= link_to "info", lesson_path(lesson) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
