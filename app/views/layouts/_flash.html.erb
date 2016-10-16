@@ -1,0 +1,7 @@
+<% flash.each do |type, message| %>
+ <% if type == "success" %>
+   <%= javascript_tag("toastr.success('#{message}')" ) unless message.blank?  %>
+ <% elsif type == "error" %>
+   <%= javascript_tag("toastr.error('#{message}')" ) unless message.blank?  %>
+ <% end %>
+<% end %>
