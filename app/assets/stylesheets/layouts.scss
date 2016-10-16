@@ -158,12 +158,12 @@ body{
 table {
   tbody {
     td {
-      a, a:visited, a:active {
+      a, i, a:visited, a:active {
         color: $tableLinkGray;
       }
-      a:hover {
+      a:hover, i:hover {
         font-weight: bold;
-        color: light-gray;
+        color: $tableLinkGray !important;
         text-decoration: none;
       }
     }
