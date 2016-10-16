@@ -92,7 +92,7 @@ table {
   tbody {
     td {
       a, a:visited, a:active {
-        color: gray;
+        color: $tableLinkGray;
       }
       a:hover {
         font-weight: bold;
