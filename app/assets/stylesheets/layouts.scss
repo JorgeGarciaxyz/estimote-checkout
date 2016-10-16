@@ -240,6 +240,7 @@ table {
   }
 }
 form {
+  width: 100%;
   background-color: lightgray;
   padding: 1%;
   select {
@@ -266,5 +267,9 @@ form {
     &:focus {
       border-color: $mainGray !important;
     }
+  }
+  .log-in-container{
+    display: flex;
+    justify-content: center;
   }
 }
