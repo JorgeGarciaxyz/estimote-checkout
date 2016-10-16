@@ -1,1 +1,6 @@
-<h1>Hello</h1>
+<h1>Hola <%= current_user.name.capitalize %></h1>
+
+<h3>Tus clases son: </h3>
+<%= render 'statics/user_lessons' %>
+
+<%= link_to "Agregar nueva clase", new_lesson_path %>
