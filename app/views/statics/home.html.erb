@@ -1,6 +1,9 @@
-<h1>Hola <%= current_user.name.capitalize %></h1>
-
-<h3>Tus clases son: </h3>
+<div class="title-section-container">
+  <div>Hola <%= current_user.name.capitalize %></div>
+</div>
+<div class="subtitle-container">
+  <div>Tus clases son: </div>
+</div>
 <%= render 'statics/user_lessons' %>
 
-<%= link_to "Agregar nueva clase", new_lesson_path %>
+<%= link_to "Agregar nueva clase", new_lesson_path, class: "fa fa-plus"%>
