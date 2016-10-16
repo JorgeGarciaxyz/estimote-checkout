@@ -15,8 +15,8 @@ class AssistancesController < ApplicationApiController
   end
 
   def index
+    @lesson = Lesson.find(params[:id])
     render layout: 'application'
-    @assistances = Assistance.where(lesson_id: params[:lesson_id])
   end
 
   private
