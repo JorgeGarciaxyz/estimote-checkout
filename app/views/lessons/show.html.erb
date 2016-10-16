@@ -26,5 +26,9 @@
     </tbody>
   </table>
 </table>
-
-<%= link_to "Volver", lessons_path %>
+<div class="back-button-row">
+  <%= link_to :back, class: "back-button" do %>
+    <i class="fa fa-arrow-left"></i>
+    Regresar
+  <% end %>
+</div>

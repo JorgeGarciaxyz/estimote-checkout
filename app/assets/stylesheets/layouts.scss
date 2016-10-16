@@ -176,8 +176,8 @@ table {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: white;
   background-color: $menuOptionBackgroundHover;
+  color: white;
   border: 1px solid $menuOptionBackgroundHover;
   border-radius: 5px;
   padding: 5px;
@@ -189,5 +189,22 @@ table {
     font-weight: bold;
     color: white;
     background-color: $menuOptionBackground;
+  }
+}
+.back-button-row{
+  .back-button{
+    background-color: $menuOptionBackground;
+    border: 1px solid $menuOptionBackground;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.5em;
+    color: white;
+    width: auto;
+    text-decoration: none;
+    &:hover{
+      font-weight: bold;
+      background-color: $menuOptionBackgroundHover;
+      border: 1px solid $menuOptionBackgroundHover;
+    }
   }
 }
