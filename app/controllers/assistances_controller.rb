@@ -14,6 +14,15 @@ class AssistancesController < ApplicationApiController
     end
   end
 
+  def set_false_assistances
+    lesson = Lesson.find(params[:id])
+    lesson.enrolled_students.each do |enrolled_student|
+      if !(Assistance.where("created_at >= ?", Time.zone.tomorrow.beginning_of_day).where(enrolled_student_id: enrolled_student.id).any?)
+        Assistance.create(is_present: false, enrolled_student_id: enrolled_student.id)
+      end
+    end
+  end
+
   def index
     @lesson = Lesson.find(params[:id])
     render layout: 'application'

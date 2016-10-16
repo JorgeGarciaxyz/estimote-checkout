@@ -13,7 +13,7 @@
       <% @lesson.enrolled_students.each do |student| %>
         <tr>
           <td><%= student.student_full_name %></td>
-          <td><%= student.assistances.count%>
+          <td><%= student.assistances.where(is_present: true).count%>
           <% student.assistances.each do |assistance|%>
             <% if assistance.is_present %>
               <td><i class="fa fa-check"/></td>

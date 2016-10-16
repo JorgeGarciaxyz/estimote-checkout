@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   get '/lessons_menu' => "statics#lessons_menu"
 
   get '/lesson/:id/assistances' => "assistances#index", as: :lesson_assistances
-
+  post '/assistances/absence' => "assistances#set_false_assistances"
 
 end
