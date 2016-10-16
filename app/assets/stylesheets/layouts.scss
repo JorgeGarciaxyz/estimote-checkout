@@ -1,40 +1,104 @@
 .error_explanation{
   color: red;
 }
-
-.sidebar {
+body{
+  display: flex;
+  flex-direction: row;
+}
+.mainbar {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  top: 0;
   align-items: center;
-   position: relative;
-   height: 100vh;
-   width: 13%;
-   border: 1px solid black;
-   z-index:1;
-   white-space: nowrap;
-   overflow: hidden;
-   text-overflow: ellipsis;
-   .logo-container{
-     width: 100%;
-     height: 30%;
-     .logo {
-       width: 100%;
-       height: 100%;
-     }
-   }
+  height: 100vh;
+  width: 15%;
 
+  z-index:1;
+
+  background-color: $mainGray;
+  color: white;
+
+  .main-title-container{
+    background-color: $menuTitleBackground;
+    width: 100%;
+    height: auto;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid $mainGray;
+    font-weight: bold;
+    cursor: default;
+  }
+  .user-actions-container{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    .user-actions{
+      width: 60%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .action {
+        color: $menuOptionColor;
+        font-size: 1.5em;
+        &:hover {
+          color: $menuOptionColorHover;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .logo-container{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo {
+      width: 90%;
+      height: 90%;
+    }
+  }
+  .menu-options-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .menu-item-container{
+      text-decoration: none;
+      background-color: $menuOptionBackground;
+      width: 100%;
+      height: 100%;
+      &:hover{
+        background-color: $menuOptionBackgroundHover;
+      }
+      .menu-item {
+        color: $menuOptionColor;
+        font-size: 1.5em;
+        font-weight: bold;
+        padding-left: 2%;
+        &:hover{
+          color: $menuOptionColorHover;
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }
-
-.sidebar-menu-item{
-  margin: 10% 0%;
-}
-
 
 #application-yield-container{
-  margin-left: 14%;
-  margin-right: 1%;
-  padding-top: 1%;
+  padding: 1%;
+  width: 85%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
