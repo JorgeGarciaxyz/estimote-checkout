@@ -191,6 +191,37 @@ table {
     background-color: $menuOptionBackground;
   }
 }
+.button-container-in-forms{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  &.is-save{
+    background-color: $menuOptionBackgroundHover;
+    border: 1px solid $menuOptionBackgroundHover;
+    &:hover{
+      background-color: $menuOptionBackground;
+    }
+  }
+  &.is-cancel{
+    background-color: red;
+    border: 1px solid red;
+    &:hover{
+      background-color: #8b1111;
+      border: 1px solid #8b1111;
+    }
+  }
+  &:hover{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+
+  }
+}
 .back-button-row{
   .back-button{
     background-color: $menuOptionBackground;

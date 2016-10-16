@@ -26,7 +26,7 @@
     <h3>Alumnos</h3>
     <%= render partial: "lessons/enrolled_students", locals: {f: f} %>
   </div>
-
-  <button type="submit" class="btn btn-primary btn-block">Guardar</button>
-  <%= link_to "Cancelar", lessons_path, class: "btn btn-block btn-danger"%>
+  
+  <button type="submit" class="button-container-in-forms is-save ">Guardar</button>
+  <%= link_to "Cancelar", lessons_path, class: "button-container-in-forms is-cancel"%>
 <% end %>
