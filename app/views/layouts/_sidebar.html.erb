@@ -1,6 +1,6 @@
 <div class='mainbar'>
   <div class="main-title-container">
-    <%= current_user.name.capitalize %>
+    <%= current_user.name.capitalize.truncate(10) %>
   </div>
   <div class="logo-container">
     <%= image_tag("logo.png", class:"logo") %>

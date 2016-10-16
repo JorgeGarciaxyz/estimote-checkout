@@ -21,15 +21,18 @@ body{
   color: white;
 
   .main-title-container{
-    background-color: $menuTitleBackground;
+    background-color: $menuOptionBackground;
     width: 100%;
     height: auto;
-    font-size: 2em;
+    font-size: 1.6em;
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid $mainGray;
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     cursor: default;
   }
   .user-actions-container{
@@ -131,7 +134,7 @@ body{
   box-shadow: 0 4px 2px -2px gray;
   div {
     height: 100%;
-    margin-left: 5%;
+    margin-left: 1%;
     font-size: 2em;
     color: white;
     font-weight: bold;
