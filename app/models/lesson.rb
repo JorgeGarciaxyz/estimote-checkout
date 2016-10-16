@@ -1,6 +1,7 @@
 class Lesson < ApplicationRecord
   include Lesson::Users
   include Lesson::Students
+  include Lesson::EnrolledStudents
   validates :name, presence: true, uniqueness: true
   validates :classroom, :hour,  presence: true
   belongs_to :user

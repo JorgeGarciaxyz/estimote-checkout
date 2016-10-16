@@ -1,4 +1,5 @@
 class LessonsController < ApplicationController
+  include Factories::LessonFactory
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,7 +11,8 @@ class LessonsController < ApplicationController
   end
 
   def create
-    @lesson = Lesson.new(lesson_params)
+    custom_params = custom_lesson_params_factory(lesson_params)
+    @lesson = Lesson.new(custom_params)
     if @lesson.save
       redirect_to lessons_path
     else
@@ -47,6 +49,6 @@ class LessonsController < ApplicationController
 
     def lesson_params
       params.require(:lesson).permit(:name, :hour, :classroom, :user_id,
-        enrolled_students_attributes: [:id, :student_id])
+        enrolled_students_attributes: [:id, :student_id, :is_valid, :lesson_id])
     end
 end
