@@ -1,7 +1,7 @@
 class StaticsController < ApplicationController
 
   def home
-    #User lessons
+    #Current user lessons
     @lessons = Lesson.where(user_id: current_user )
   end
 
