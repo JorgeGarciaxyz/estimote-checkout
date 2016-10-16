@@ -150,7 +150,7 @@ body{
   box-shadow: 0 4px 2px -2px gray;
   div {
     height: 100%;
-    margin-left: 5%;
+    margin-left: 1%;
     font-size: 1.5em;
     color: gray;
   }
@@ -236,6 +236,35 @@ table {
       font-weight: bold;
       background-color: $menuOptionBackgroundHover;
       border: 1px solid $menuOptionBackgroundHover;
+    }
+  }
+}
+form {
+  background-color: lightgray;
+  padding: 1%;
+  select {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+  label {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  input {
+    &:focus {
+      border-color: $mainGray !important;
     }
   }
 }
