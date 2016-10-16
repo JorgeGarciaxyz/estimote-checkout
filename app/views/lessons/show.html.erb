@@ -1,0 +1,30 @@
+<h3><strong>Clase:</strong> <%= @lesson.name %></h3>
+
+<h4><strong>Hora:</strong> <%= @lesson.hour %></h4>
+
+<h4><strong>Salón:</strong> <%= @lesson.classroom %></h4>
+
+<h4><strong>Maestro</strong> <%= @lesson.user_name %></h4>
+
+<br>
+<h4>Alumnos</h4>
+<table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Matrícula</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @lesson.enrolled_students.each do |enrolled_student| %>
+        <tr>
+          <th><%= enrolled_student.student_full_name %></th>
+          <th><%= enrolled_student.student_student_number %></th>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</table>
+
+<%= link_to "Volver", lessons_path %>
