@@ -14,6 +14,11 @@ class AssistancesController < ApplicationApiController
     end
   end
 
+  def index
+    render layout: 'application'
+    @assistances = Assistance.where(lesson_id: params[:lesson_id])
+  end
+
   private
 
   def set_enrolled_student

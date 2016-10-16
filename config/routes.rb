@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   get '/students_menu' => "statics#students_menu"
   get '/lessons_menu' => "statics#lessons_menu"
 
+  get '/lesson/:id/assistances' => "assistances#index", as: :lesson_assistances
+
+
 end
