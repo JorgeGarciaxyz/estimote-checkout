@@ -1,3 +1,4 @@
+<h3><strong>Asistencias: </strong><%= @lesson.name %></h3>
 <div class="table-responsive">
   <table class="table">
     <thead>
@@ -25,4 +26,11 @@
       <% end %>
     </tbody>
   </table>
+</div>
+<br>
+<div class="back-button-row">
+  <%= link_to :back, class: "back-button" do %>
+    <i class="fa fa-arrow-left"></i>
+    Regresar
+  <% end %>
 </div>
