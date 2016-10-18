@@ -21,15 +21,18 @@ body{
   color: white;
 
   .main-title-container{
-    background-color: $menuTitleBackground;
+    background-color: $menuOptionBackground;
     width: 100%;
     height: auto;
-    font-size: 2em;
+    font-size: 1.6em;
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid $mainGray;
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     cursor: default;
   }
   .user-actions-container{
@@ -131,7 +134,7 @@ body{
   box-shadow: 0 4px 2px -2px gray;
   div {
     height: 100%;
-    margin-left: 5%;
+    margin-left: 1%;
     font-size: 2em;
     color: white;
     font-weight: bold;
@@ -147,7 +150,7 @@ body{
   box-shadow: 0 4px 2px -2px gray;
   div {
     height: 100%;
-    margin-left: 5%;
+    margin-left: 1%;
     font-size: 1.5em;
     color: gray;
   }
@@ -155,15 +158,118 @@ body{
 table {
   tbody {
     td {
-      a, a:visited, a:active {
+      a, i, a:visited, a:active {
         color: $tableLinkGray;
       }
-      a:hover {
+      a:hover, i:hover {
         font-weight: bold;
-        color: light-gray;
+        color: $tableLinkGray !important;
         text-decoration: none;
       }
     }
   }
 
+}
+.button-container{
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $menuOptionBackgroundHover;
+  color: white;
+  border: 1px solid $menuOptionBackgroundHover;
+  border-radius: 5px;
+  padding: 5px;
+  div {
+    margin-left: 5px;
+  }
+  &:hover{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    background-color: $menuOptionBackground;
+  }
+}
+.button-container-in-forms{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  &.is-save{
+    background-color: $menuOptionBackgroundHover;
+    border: 1px solid $menuOptionBackgroundHover;
+    &:hover{
+      background-color: $menuOptionBackground;
+    }
+  }
+  &.is-cancel{
+    background-color: red;
+    border: 1px solid red;
+    &:hover{
+      background-color: #8b1111;
+      border: 1px solid #8b1111;
+    }
+  }
+  &:hover{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+
+  }
+}
+.back-button-row{
+  .back-button{
+    background-color: $menuOptionBackground;
+    border: 1px solid $menuOptionBackground;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.5em;
+    color: white;
+    width: auto;
+    text-decoration: none;
+    &:hover{
+      font-weight: bold;
+      background-color: $menuOptionBackgroundHover;
+      border: 1px solid $menuOptionBackgroundHover;
+    }
+  }
+}
+form {
+  width: 100%;
+  background-color: lightgray;
+  padding: 1%;
+  select {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+  label {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  input {
+    &:focus {
+      border-color: $mainGray !important;
+    }
+  }
+  .log-in-container{
+    display: flex;
+    justify-content: center;
+  }
 }

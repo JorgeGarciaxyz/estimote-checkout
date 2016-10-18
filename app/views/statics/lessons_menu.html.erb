@@ -8,6 +8,7 @@
   <%= link_to "Ver classes", lessons_path %>
 </p>
 
-<p>
-  <%= link_to "Agregar nueva clase", new_lesson_path %>
-</p>
+<%= link_to new_lesson_path, class: "button-container" do%>
+  <i class="fa fa-plus"></i>
+  <div>Agregar nueva clase</div>
+<% end %>

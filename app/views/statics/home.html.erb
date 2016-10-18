@@ -9,4 +9,7 @@
 </div>
 <%= render 'statics/user_lessons' %>
 
-<%= link_to "Agregar nueva clase", new_lesson_path, class: "fa fa-plus"%>
+<%= link_to new_lesson_path, class: "button-container" do%>
+  <i class="fa fa-plus"></i>
+  <div>Agregar clase</div>
+<% end %>

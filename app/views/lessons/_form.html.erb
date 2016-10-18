@@ -8,24 +8,27 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :hour %>
+    <%= f.label "Hora: " %>
     <%= f.select :hour, HOURS, class: "form-control", required: true %>
   </div>
 
   <div class="form-group">
-    <%= f.label :classroom %>
+    <%= f.label "Salon: " %>
     <%= f.select :classroom, CLASSROOMS, class: "form-control", required: true %>
   </div>
 
   <div class="form-group">
-    <%= f.label :user_id %>
+    <%= f.label "Maestro: " %>
     <%= f.collection_select :user_id, @lesson.available_users, :id, :name,{required: true} %>
   </div>
 
   <div class="form-group">
-    <h3>Alumnos</h3>
+    <div class="subtitle-container">
+      <div>Alumnos </div>
+    </div>
     <%= render partial: "lessons/enrolled_students", locals: {f: f} %>
   </div>
 
-  <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+  <button type="submit" class="button-container-in-forms is-save ">Guardar</button>
+  <%= link_to "Cancelar", lessons_path, class: "button-container-in-forms is-cancel"%>
 <% end %>
