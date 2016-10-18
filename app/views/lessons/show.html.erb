@@ -6,6 +6,12 @@
 
 <h4><strong>Maestro</strong> <%= @lesson.user_name %></h4>
 
+<div class="back-button-row">
+  <%= link_to lesson_assistances_path(@lesson.id), class: "back-button" do %>
+    Asistencias
+  <% end %>
+</div>
+
 <br>
 <h4>Alumnos</h4>
 <table>
@@ -27,7 +33,7 @@
   </table>
 </table>
 <div class="back-button-row">
-  <%= link_to :back, class: "back-button" do %>
+  <%= link_to lessons_path, class: "back-button" do %>
     <i class="fa fa-arrow-left"></i>
     Regresar
   <% end %>
