@@ -7,11 +7,13 @@ module ValidateUserInLesson
   end
 
   def verify_user(enrolled_student, lesson)
-    if lesson.enrolled_students.find_by(id: enrolled_student.id).nil?
-      false
-    else
-      true
+    result = false
+    unless enrolled_student.nil?
+      unless lesson.enrolled_students.find_by(id: enrolled_student.id).nil?
+        result = true
+      end
     end
+    result
   end
 
   def uuid_is_valid(uuid)
