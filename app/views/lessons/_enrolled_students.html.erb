@@ -1,0 +1,20 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Matrícula</th>
+      <th>Agregar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= f.fields_for :enrolled_students, @lesson.available_enrolled_students do  |student| %>
+      <tr id="<%= student.object.id %>">
+        <th><%= student.object.student_full_name %></th>
+        <th><%= student.object.student_student_number %></th>
+        <input type="hidden" name="lesson[enrolled_students_attributes][<%= student.index %>][student_id]" value="<%=student.object.student_id %>"/>
+        <input type="hidden" name="lesson[enrolled_students_attributes][<%= student.index %>][lesson_id]" value="<%= @lesson.try(:id) %>"/>
+        <th><%= check_box_tag "lesson[enrolled_students_attributes][#{student.index}][is_valid]", student.object.id, false %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

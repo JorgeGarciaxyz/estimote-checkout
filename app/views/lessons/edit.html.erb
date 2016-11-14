@@ -1,0 +1,34 @@
+<div class="title-section-container">
+  <div>
+    <i class="fa fa-pencil" aria-hidden="true"></i>
+    Editar clase: <%= @lesson.name %>
+  </div>
+</div>
+
+<%= form_for(@lesson) do |f| %>
+
+  <%= render "shared/error_messages", :target => @lesson %>
+
+  <div class="form-group">
+    <%= f.label :nombre %>
+    <%= f.text_field :name, autofocus: true, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Hora: " %>
+    <%= f.select :hour, HOURS, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Salón: " %>
+    <%= f.select :classroom, CLASSROOMS, class: "form-control", required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Maestro: " %>
+    <%= f.collection_select :user_id, @lesson.available_users, :id, :name,{required: true} %>
+  </div>
+
+  <button type="submit" class="button-container-in-forms is-save ">Guardar</button>
+  <%= link_to "Cancelar", lessons_path, class: "button-container-in-forms is-cancel"%>
+<% end %>

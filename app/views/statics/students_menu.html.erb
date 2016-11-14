@@ -1,0 +1,15 @@
+<div class="title-section-container">
+  <div>
+    <i class="fa fa-reddit-alien" aria-hidden="true"></i>
+    Alumnos
+  </div>
+</div>
+
+<p>
+  <%= link_to "Ver alumnos", students_path %>
+</p>
+
+<%= link_to new_student_path, class: "button-container" do%>
+  <i class="fa fa-plus"></i>
+  <div>Agregar nuevo alumno</div>
+<% end %>

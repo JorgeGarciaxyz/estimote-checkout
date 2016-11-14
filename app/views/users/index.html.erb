@@ -1,0 +1,12 @@
+<div class="title-section-container">
+  <div>
+    <i class="fa fa-users" aria-hidden="true"></i>
+    Usuarios
+  </div>
+</div>
+<%= render "indextable" %>
+
+<%= link_to new_user_path, class: "button-container" do%>
+  <i class="fa fa-plus"></i>
+  <div>Nuevo Usuario</div>
+<% end %>

@@ -1,0 +1,279 @@
+.error_explanation{
+  color: red;
+}
+body{
+  display: flex;
+  flex-direction: row;
+}
+.mainbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  top: 0;
+  align-items: center;
+  height: 100vh;
+  width: 15%;
+
+  z-index:1;
+
+  background-color: $mainGray;
+  color: white;
+
+  .main-title-container{
+    background-color: $menuOptionBackground;
+    width: 100%;
+    height: auto;
+    font-size: 1.6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid $mainGray;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: default;
+  }
+  .user-actions-container{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+    .user-actions{
+      width: 60%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .action {
+        color: $menuOptionColor;
+        font-size: 1.5em;
+        &:hover {
+          color: $menuOptionColorHover;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .logo-container{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .logo {
+      width: 90%;
+      height: 90%;
+    }
+  }
+  .menu-options-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    .menu-item-container{
+      text-decoration: none;
+      background-color: $menuOptionBackground;
+      width: 100%;
+      height: 100%;
+      &:hover{
+        background-color: $menuOptionBackgroundHover;
+      }
+      .menu-item {
+        color: $menuOptionColor;
+        font-size: 1.5em;
+        font-weight: bold;
+        padding-left: 2%;
+        &:hover{
+          color: $menuOptionColorHover;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+#application-yield-container{
+  padding: 1%;
+  width: 85%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#user-sidebar-options{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10% 0%;
+}
+
+#sidebar-menu{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-section-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: gray;
+  box-shadow: 0 4px 2px -2px gray;
+  div {
+    height: 100%;
+    margin-left: 1%;
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+  }
+}
+.subtitle-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 4px 2px -2px gray;
+  div {
+    height: 100%;
+    margin-left: 1%;
+    font-size: 1.5em;
+    color: gray;
+  }
+}
+table {
+  tbody {
+    td {
+      a, i, a:visited, a:active {
+        color: $tableLinkGray;
+      }
+      a:hover, i:hover {
+        font-weight: bold;
+        color: $tableLinkGray !important;
+        text-decoration: none;
+      }
+    }
+  }
+
+}
+.button-container{
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $menuOptionBackgroundHover;
+  color: white;
+  border: 1px solid $menuOptionBackgroundHover;
+  border-radius: 5px;
+  padding: 5px;
+  div {
+    margin-left: 5px;
+  }
+  &:hover{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    background-color: $menuOptionBackground;
+  }
+}
+.button-container-in-forms{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  &.is-save{
+    background-color: $menuOptionBackgroundHover;
+    border: 1px solid $menuOptionBackgroundHover;
+    &:hover{
+      background-color: $menuOptionBackground;
+    }
+  }
+  &.is-cancel{
+    background-color: red;
+    border: 1px solid red;
+    &:hover{
+      background-color: #8b1111;
+      border: 1px solid #8b1111;
+    }
+  }
+  &:hover{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+
+  }
+}
+.back-button-row{
+  .back-button{
+    background-color: $menuOptionBackground;
+    border: 1px solid $menuOptionBackground;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.5em;
+    color: white;
+    width: auto;
+    text-decoration: none;
+    &:hover{
+      font-weight: bold;
+      background-color: $menuOptionBackgroundHover;
+      border: 1px solid $menuOptionBackgroundHover;
+    }
+  }
+}
+form {
+  width: 100%;
+  background-color: lightgray;
+  padding: 1%;
+  select {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+  label {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  input {
+    &:focus {
+      border-color: $mainGray !important;
+    }
+  }
+  .log-in-container{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.blue-font{
+  color: blue !important;
+}

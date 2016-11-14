@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="" id="users-signup-form-container">
+      <h2>Nuevo Usuario</h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name),
+                    html: {id: "users-signup-form"}) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <%= f.label :nombre %><br />
+          <%= f.text_field :name, autofocus: true, class: "form-control", required: true%>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :apellido %><br />
+          <%= f.text_field :last_name, class: "form-control", required: true %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, class: "form-control", required: true%>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class: "form-control", required: true%>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", required: true %>
+        </div>
+
+        <br>
+        <div class="actions">
+          <%= f.submit "Crear usuario", class: "btn btn-primary btn-block"%>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

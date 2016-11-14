@@ -1,0 +1,30 @@
+<div class='mainbar'>
+  <div class="main-title-container">
+    <%= current_user.name.capitalize.truncate(10) %>
+  </div>
+  <div class="logo-container">
+    <%= image_tag("logo.png", class:"logo") %>
+  </div>
+  <div class="user-actions-container">
+    <div class="user-actions">
+      <i class="fa fa-user action" aria-hidden="true"></i>
+      <%= link_to(destroy_user_session_path, :method => :delete) do %>
+        <i class="fa fa-sign-out action" aria-hidden="true"></i>
+      <% end %>
+    </div>
+  </div>
+  <div class="menu-options-container">
+    <%= link_to root_path, class: "menu-item-container" do %>
+      <div class="menu-item">Home</div>
+    <% end %>
+    <%= link_to lessons_path, class: "menu-item-container" do %>
+      <div class="menu-item">Clases</div>
+    <% end %>
+    <%= link_to users_path, class: "menu-item-container" do %>
+      <div class="menu-item">Usuarios</div>
+    <% end %>
+    <%= link_to students_path, class: "menu-item-container" do %>
+      <div class="menu-item">Alumnos</div>
+    <% end %>
+  </div>
+</div>

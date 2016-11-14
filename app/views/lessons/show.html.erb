@@ -1,0 +1,40 @@
+<h3><strong>Clase:</strong> <%= @lesson.name %></h3>
+
+<h4><strong>Hora:</strong> <%= @lesson.hour %></h4>
+
+<h4><strong>Salón:</strong> <%= @lesson.classroom %></h4>
+
+<h4><strong>Maestro</strong> <%= @lesson.user_name %></h4>
+
+<div class="back-button-row">
+  <%= link_to lesson_assistances_path(@lesson.id), class: "back-button" do %>
+    Asistencias
+  <% end %>
+</div>
+
+<br>
+<h4>Alumnos</h4>
+<table>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Matrícula</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @lesson.enrolled_students.each do |enrolled_student| %>
+        <tr>
+          <th><%= enrolled_student.student_full_name %></th>
+          <th><%= enrolled_student.student_student_number %></th>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</table>
+<div class="back-button-row">
+  <%= link_to lessons_path, class: "back-button" do %>
+    <i class="fa fa-arrow-left"></i>
+    Regresar
+  <% end %>
+</div>

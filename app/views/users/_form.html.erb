@@ -1,0 +1,30 @@
+<%= form_for(@user) do |f| %>
+
+  <%= render "shared/error_messages", :target => @user %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :name, autofocus: true, class: "form-control", required: true%>
+  </div>
+  <div class="form-group">
+    <%= f.label :apellido %><br />
+    <%= f.text_field :last_name, class: "form-control", required: true %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, class: "form-control", required: true%>
+  </div>
+  <div class="field">
+    <%= f.label :contraseña %><br />
+    <%= f.password_field :password, autofocus: true, class: "form-control", required: true%>
+  </div>
+  <div class="field">
+    <%= f.label :confirmar_contraseña %><br />
+    <%= f.password_field :password_confirmation, autofocus: true, class: "form-control", required: true%>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Guardar", class: "button-container-in-forms is-save"%>
+    <%= link_to "Cancelar", students_path, class: "button-container-in-forms is-cancel"%>
+  </div>
+<% end %>
